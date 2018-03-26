@@ -53,13 +53,13 @@
        $("#fname").change(function()
             {
                
-                signup.name= $("#fname").val();
+                signup.fname= $("#fname").val();
             
             });
      $("#lname").change(function()
             {
                
-                signup.name= $("#lname").val();
+                signup.lname= $("#lname").val();
             
             });
             
@@ -67,7 +67,7 @@
      $("#password").change(function()
             {
                
-                signup.name= $("#password").val();
+                signup.password= $("#password").val();
             
             });    
             
@@ -75,7 +75,7 @@
      $("#email").change(function()
             {
                
-                signup.name= $("#email").val();
+                signup.email= $("#email").val();
             
             });
             
@@ -83,11 +83,11 @@
      $("#bdate").change(function()
             {
                
-                signup.name= $("#bdate").val();
+                signup.bdate= $("#bdate").val();
             
             });
     
-     
+     console.log(signup); 
              $("#signup").click(function(){
                 $.ajax({
                     method: "POST",
