@@ -14,8 +14,18 @@ module.exports = function(app){
 	app.route('/api/articles/edit/:articleId')
 	.get(articles.read)
 	.put(users.requiresLogin, articles.update);
+	
+app.route('/hikingtools')
+	.get(articles.viewHikingtools);
+
+ app.route('/hikingguieds')
+	.get(articles.viewHikingguieds);
+
+app.route('/login')
+	.get(articles.viewLogin);	
 
 
+	
 app.param('articleId', articles.articleByID);
 
 

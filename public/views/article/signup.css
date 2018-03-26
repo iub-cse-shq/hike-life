@@ -1,0 +1,82 @@
+body {
+  background: url("../images/BOGALAKE1.jpg");
+    background-repeat: no-repeat;
+margin-right: 50px;
+     background-color: #24313C;
+     text-align: center;
+ }
+.text_1{
+    text-align: center;
+    color: white;
+    
+}
+ 
+ .botton_3>input {
+     border: 1px solid black;
+     background-color: #1AB188;
+     color: #ECF0F1;
+     font-weight: bold;
+     font-size: 25px;
+     height: 80px;
+     width: 45%;
+     transition: 1s;
+     margin-left: -1px;
+     border-radius: 4px;
+ }
+ 
+ .botton_3>input:hover {
+     background-color: green;
+     color: black;
+ }
+ 
+ 
+ .first_name>input {
+     height: 40px;
+     width: 22%;
+     background-color: #24313C;
+     border: 2px solid #ECF0F1;
+     margin-bottom: 15px;
+     border-radius: 3px;
+      color: #ECF0F1;
+     font-size: 18px;
+     
+ }
+ 
+ .email_part>input {
+     height: 40px;
+     width: 44.5%;
+     background-color: #24313C;
+     border: 2px solid #ECF0F1;
+     margin-bottom: 15px;
+     border-radius: 3px;
+      color: #ECF0F1;
+      font-size: 18px;
+ }
+.password>input {
+     height: 40px;
+     width: 44.5%;
+     background-color: #24313C;
+     border: 2px solid #ECF0F1;
+     margin-bottom: 15px;
+     border-radius: 3px;
+      color: #ECF0F1;
+      font-size: 18px;
+ }
+.Sign_up{
+   
+    text-align: center;
+}
+.radio{
+    font-weight: bold;
+    font-size: 33px;
+    color: white;
+    margin-left: -29%;
+    margin-bottom: 10px;
+}
+.dob{
+    height: 45px;
+    margin-left: -30%;
+     margin-bottom: 10px;
+    box-sizing: 100px;
+    
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Website Tutorial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/signup.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+<body>
+
+<div class="Sign_up">
+    
+<div class="text_1">
+<h1>WELCOME TO JOIN US</h1></div>
+    
+
+        <div class="first_name">
+            <input type="text" id="fname" placeholder="  First Name *" >
+            <input type="text" id="lname" placeholder="  Last Name *" ><br>
+        </div>
+        <div class="email_part">
+            <input type="text" id="email" placeholder="  Email Address *" ><br></div>
+            
+             <div class="dob">
+                <input type="text" id="bdate"   name="birthday" /><br>
+            
+             </div>
+             <div class="password">
+            <input type="password" id="password" placeholder="  Set a Password *" ><br>
+             
+        </div>
+
+    <div class="botton_3">
+        <input type="button" id="signup" value="Get Started">
+    </div>
+    <div class="text_1">
+
+   </div>
+    </div>
+    <script>
+                var signup={
+                fname :"" ,
+                lname :"" ,
+                 bdate:"",
+                password: "",
+                email:"",
+                };
+                
+       $("#fname").change(function()
+            {
+               
+                signup.name= $("#fname").val();
+            
+            });
+     $("#lname").change(function()
+            {
+               
+                signup.name= $("#lname").val();
+            
+            });
+            
+
+     $("#password").change(function()
+            {
+               
+                signup.name= $("#password").val();
+            
+            });    
+            
+                 
+     $("#email").change(function()
+            {
+               
+                signup.name= $("#email").val();
+            
+            });
+            
+            
+     $("#bdate").change(function()
+            {
+               
+                signup.name= $("#bdate").val();
+            
+            });
+    
+     
+             $("#signup").click(function(){
+                $.ajax({
+                    method: "POST",
+                    url: "/api/signup",
+                    data: signup
+                    
+                }).done(function(response){
+                    console.log(response);
+                     window.location.replace("/signup"+response._id); 
+                }).fail(function(response){
+                   console.log(response); 
+        $("#error").text("Something went wrong! Try again.");
+                });
+                
+            });
+    </script>
+    
+</body>
+
+
+</html>

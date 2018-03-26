@@ -3,6 +3,34 @@ var Article = require('./../models/Article.js');
 var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
+module.exports.viewHikingtools = function(req, res){
+  res.render('./../public/views/article/hikingtools.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+module.exports.viewHikingguieds = function(req, res){
+  res.render('./../public/views/article/hikingguieds.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+
+module.exports.viewLogin = function(req, res){
+  res.render('./../public/views/article/login.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+
+module.exports.viewSignup = function(req, res){
+  res.render('./../public/views/article/signup.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+
+
 module.exports.list = function(req, res) {
   Article.find(function(err, data) {
     if (err) {
