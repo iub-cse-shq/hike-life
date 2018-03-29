@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="/signup.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/signup.css" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
@@ -104,7 +104,7 @@
                     
                 }).done(function(response){
                     console.log(response);
-                     window.location.replace("/profile/"+response._id); 
+                     window.location.replace("/list/"+response._id); 
                 }).fail(function(response){
                    console.log(response); 
         $("#error").text("Something went wrong! Try again.");

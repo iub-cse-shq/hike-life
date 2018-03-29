@@ -24,8 +24,9 @@ app.route('/hikingtools')
 app.route('/login')
 	.get(articles.viewLogin);	
 
-app.route('/profile')
-	.get(articles.viewProfile);	
+ app.route('/api/articles')
+	.get(articles.list)
+	.post(users.requiresLogin, articles.profile);
 
 	
 app.param('articleId', articles.articleByID);
