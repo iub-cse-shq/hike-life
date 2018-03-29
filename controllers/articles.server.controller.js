@@ -22,6 +22,13 @@ module.exports.viewLogin = function(req, res){
           request: req
         });
 }
+module.exports.viewProfile = function(req, res){
+  res.render('./../public/views/article/profile.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+
 
 module.exports.viewSignup = function(req, res){
   res.render('./../public/views/article/signup.ejs', {

@@ -61,3 +61,9 @@ exports.me = function(req, res) {
 exports.read = function(req, res) {
 	res.json(req.profile);
 };
+module.exports.viewProfile = function(req, res){
+  res.render('./../public/views/article/profile.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}

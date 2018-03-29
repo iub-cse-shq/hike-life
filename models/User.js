@@ -39,7 +39,10 @@ var UserSchema = new Schema({
         default: '',
         required: 'Last Name required'
       },
-
+   bdate: {
+        type: String,
+        trim: true
+    },
     displayName: {
         type: String,
         trim: true
@@ -53,13 +56,12 @@ var UserSchema = new Schema({
     },
     username: {
         type: String,
-        trim: true,
-        required: 'User Name required'
+        trim: true
     },
     photo: {
         type: String,
-        default: 'http://www.ee-ip.org/sites/default/files/default_images/default-user.png',
-        trim: true
+        trim: true,
+        required: 'photo required'
     },
     description: {
         type: String,

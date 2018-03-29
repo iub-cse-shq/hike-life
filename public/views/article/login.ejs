@@ -32,23 +32,25 @@
     </div>
 
     <script>
+    var user = {email:'', password:''};
       $("#login-btn").click(function() {
         user = {
           email: $("#email").val(),
-          password: $("pass").val()
+          password: $("#pass").val()
         };
 
-        $.ajax({
-          method: 'POST',
-          url: "/auth/signin",
-          data: user
-        }).done(function(response) {
-          console.log(response);
-          window.location.replace('/profile.html');
-        }).fail(function(response) {
-          console.log(response);
-          $("#error").text("Something went wrong! Try again.");
-        });
+ $.ajax({
+        method: 'POST',
+        url: "/auth/signin",
+        data: user
+      }).done(function(response){
+        console.log(response);
+        window.location.replace('/profile');
+      }).fail(function(response){
+        console.log(response);
+        $("#error").text("Something went wrong! Try again.");
+      });
+
       });
 
     </script>
