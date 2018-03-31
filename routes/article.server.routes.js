@@ -33,7 +33,10 @@ app.route('/signup').get(users.signupView);
 		app.route('/profile/:userId')
 	.get(users.viewProfile);	
 
-	
+app.route('/profile').get(users.profileView);
+		app.route('/list/:userId')
+	.get(users.viewList)	
+
 app.param('articleId', articles.articleByID);
 
 }
