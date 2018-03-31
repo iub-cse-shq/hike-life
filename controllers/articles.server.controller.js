@@ -29,6 +29,19 @@ module.exports.viewProfile = function(req, res){
         });
 }
 
+module.exports.viewList = function(req, res){
+  res.render('./../public/views/article/list.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+module.exports.viewView = function(req, res){
+  res.render('./../public/views/article/view.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+
 
 module.exports.viewSignup = function(req, res){
   res.render('./../public/views/article/signup.ejs', {
@@ -39,7 +52,7 @@ module.exports.viewSignup = function(req, res){
 
 
 module.exports.list = function(req, res) {
-  Article.find(function(err, data) {
+Article.find(function(err, data) {
     if (err) {
       return res.status(400).send({
 

@@ -23,13 +23,17 @@ app.route('/hikingtools')
 
 app.route('/login')
 	.get(articles.viewLogin);	
+app.route('/list')
+	.get(articles.viewList);
 
- app.route('/api/articles')
-	.get(articles.list)
-	.post(users.requiresLogin, articles.profile);
+app.route('/view')
+	.get(articles.viewView);
+
+app.route('/signup').get(users.signupView);
+		app.route('/profile/:userId')
+	.get(users.viewProfile);	
 
 	
 app.param('articleId', articles.articleByID);
-
 
 }

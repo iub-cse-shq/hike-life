@@ -42,14 +42,15 @@
  $.ajax({
         method: 'POST',
         url: "/auth/signin",
-        data: user
+        data: login
       }).done(function(response){
         console.log(response);
-        window.location.replace("/profile/"+response);
+        window.location.replace("/profile/"+response._id);
       }).fail(function(response){
         console.log(response);
         $("#error").text("Something went wrong! Try again.");
       });
+
       });
 
     </script>

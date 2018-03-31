@@ -31,12 +31,11 @@
           color: white;
           background-color: #5E4485;
       }
-   .p{
-     float:right;
+ .name{
+     float:left;
    color:black;
   	font-size: 30px;
   	border-bottom: 5px solid black;
- 
    } 
   </style>
    
@@ -61,19 +60,32 @@
             <div class="container">
                 <div class="row">
        <div class="col-md-8">
- <p><%= request.profile.firstName %></p>
+ <p id="name"   ><%= request.profile.firstName %></p>
            </div>
              <div class="col-md-4">      
  <img src=<%=request.profile.photo%>
           </div>
                  </div>
-       <div class="form-horizontal">        
   <div class="form-group">
-    <label for="places" class="col-sm-2 control-label">Name of places where you visited</label>
+<p>   <label for="place" class="col-sm-2 control-label">Name of place</label></p>
     <div class="col-sm-10">
-      <textarea class="form-control" rows="3" id="places"></textarea>
+      <input type="text" class="form-control" id="place">
     </div>
   </div>
+  
+    <div class="form-group">
+ <p>   <label for="photo" clsss="col-sm-2 control-label">Add photo</label></p>
+    <div class="col-sm-10">
+         <input type="text" id="photo" placeholder="  your image url *" ><br>
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3" id="description"></textarea>
+    </div>
+  </div>
+  
    <div class="form-group"><div class="col-sm-offset-2 col-sm-10">
       <button id="submit" type="submit" class="btn btn-default">Submit</button>
       <div id="error"></div>
@@ -82,21 +94,31 @@
   </div>
   <script>
     var signup{
-      places:"",
+      place:"",
+     description:"", 
+     photo:"" 
     }
-           $("#places").change(function()
+           $("#place").change(function()
             {
                
-           signup.places= $("#places").val();
+           signup.place= $("#place").val();
             });      
+    $('#description').change(function(){
+    signup.description = $('#description').val();
+  })  ;
+        $("#photo").change(function()
+            {
+             signup.place= $("#place").val();
+            });         
+ 
       $('#submit').click(function(){
     $.ajax({
       method:"POST",
       url:'/api/signup',
-      data: product
+      data: profile
     }).done(function(response){
       console.log(response);
-      window.location.replace("/products/"+response._id);
+      window.location.repace("/list/"+response);
     }).fail(function(response){
       $("#error").text(JSON.parse(response.responseText).message);
         console.log(JSON.parse(response.responseText).message);

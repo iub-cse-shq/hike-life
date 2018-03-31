@@ -104,7 +104,7 @@
                     
                 }).done(function(response){
                     console.log(response);
-                     window.location.replace("/list/"+response._id); 
+                     window.location.replace("/profile/"+response._id); 
                 }).fail(function(response){
                    console.log(response); 
         $("#error").text("Something went wrong! Try again.");
