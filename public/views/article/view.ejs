@@ -39,15 +39,10 @@
   
  } 
  
-.form-group{
-          float:left;
-          font-size: 10px;
-          color: white
-         left margin:2px;     
-          padding:5px 12px;
-          background: #5E4485;
-          border: 2px solid;
-          
+.signup{
+  text-align: right;
+  padding: 0px;
+  padding-top: 0px;
 }
   </style>
      <body>
@@ -78,12 +73,12 @@
  
   </div>
   
-     <div class="form-group"><div class="col-sm-offset-2 col-sm-10">
-      <button id="delete" type="delete" class="btn btn-default">Delete</button>    <button id="add" type="add" class="btn btn-default">Add</button>
-      <div id="error"></div>
-    </div>
-  </div>
-</div>
+  <div class="signup">
+		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log In</button>
+
+<div id="id01" class="modal">
+	</div>
+
  <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/ejs_production.js"></script><script>
   </script>
