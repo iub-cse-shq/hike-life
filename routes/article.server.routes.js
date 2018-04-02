@@ -35,7 +35,7 @@ app.route('/signup').get(users.signupView);
 
 app.route('/profile').get(users.profileView);
 		app.route('/list/:userId')
-	.get(users.viewList)	
+	.get(users.viewList);	
 
 app.param('articleId', articles.articleByID);
 
