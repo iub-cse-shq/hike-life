@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Article = require('./../models/Article.js');
+
 var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
@@ -22,12 +23,7 @@ module.exports.viewLogin = function(req, res){
           request: req
         });
 }
-module.exports.viewProfile = function(req, res){
-  res.render('./../public/views/article/profile.ejs', {
-          user: req.user || null,
-          request: req
-        });
-}
+
 
 module.exports.viewList = function(req, res){
   res.render('./../public/views/article/list.ejs', {
@@ -41,6 +37,8 @@ module.exports.viewView = function(req, res){
           request: req
         });
 }
+
+
 
 
 module.exports.viewSignup = function(req, res){

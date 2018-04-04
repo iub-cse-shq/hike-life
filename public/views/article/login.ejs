@@ -27,22 +27,22 @@
         <input type="checkbox"><b>Remember Me</b>
       </div><br><br>
       <div class="botton">
-        <input type="button" value="Forget Password?"> <input id='login-btn' type="button" value="Login" style="margin-left:10px">
+        <input type="button" value="Forget Password?"> <input id='login' type="button" value="Login" style="margin-left:10px">
       </div>
     </div>
 
     <script>
     var user = {email:'', password:''};
-      $("#login-btn").click(function() {
-        user = {
+      
+ $("#login").click(function(){
+ user = {
           email: $("#email").val(),
           password: $("#pass").val()
         };
-
- $.ajax({
+       $.ajax({
         method: 'POST',
         url: "/auth/signin",
-        data: login
+        data: user
       }).done(function(response){
         console.log(response);
         window.location.replace("/profile/"+response._id);
@@ -51,7 +51,7 @@
         $("#error").text("Something went wrong! Try again.");
       });
 
-      });
+ });
 
     </script>
 

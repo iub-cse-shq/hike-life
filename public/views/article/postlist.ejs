@@ -56,23 +56,40 @@
         </div>
     </div>
 </nav>    
-  <div class="container"><h2>All Products</h2>
+  <div class="container"><h2>All Post</h2>
    <h1>Article List</h1>
-<% console.log(articles) %>
-  <% for(var i=0; i<articles.length; i++) { %>
-    <h1> <%= articles[i].title %> </h1>
+<% console.log(posts) %>
+  <% for(var i=0; i<posts.length; i++) { %>
+    <h1> <%= posts[i].title %> </h1>
     <p>
-      <%= articles[i].place%>
+      <%= posts[i].place%>
     </p>
-    <h3><%= articles[i].photo%></h3>
-   <h3><%= articles[i].description%></h3>
- 
+    <h3><%= posts[i].photo%></h3>
+   <h3>Description<%= posts[i].description%></h3>
+  <div class="signup">
+		<button onclick="deletepost('<%= posts[i]._id %>')" style="width:auto;">Delete</button> 
+
     <% } %>
     </div>
   </body>
   <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/ejs_production.js"></script>
   <script>
+  function deletepost(id){
+       $.ajax({
+      method:"DELETE",
+      url:'/api/posts/'+id,
+     
+    }).done(function(response){
+      console.log(response);
+     
+    }).fail(function(response){
+                   console.log(response); 
+        $("#error").text("Something went wrong! Try again.");
+                });
+                
+           
+  }
   </script>
 
 

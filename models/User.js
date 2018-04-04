@@ -68,11 +68,12 @@ var UserSchema = new Schema({
         default: '',
         trim: true
     },
-    linkedin: {
+    place: {
         type: String,
         default: '',
         trim: true
     },
+    
     twitter: {
         type: String,
         default: '',
