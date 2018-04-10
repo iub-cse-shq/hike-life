@@ -37,6 +37,13 @@
   	font-size: 30px;
   	border-bottom: 5px solid black;
    } 
+   #signout.btn.bt-default{
+       margin-top:20px;
+       margin-right:20px;
+   }
+  #img{
+    width:500px;
+  } 
   </style>
      <body>
 <nav class="navbar navbar-inverse">
@@ -51,21 +58,22 @@
                 </i></h2>        </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right"> 
-            <li class="active"><a href="/">Logout</a></li>
+            <li class="active" >
+              <button type="button" class="btn bt-default" id="signout">Logout</button></li>
             </ul>
         </div>
     </div>
 </nav>    
   <div class="container"><h2>All Post</h2>
-   <h1>Article List</h1>
 <% console.log(posts) %>
   <% for(var i=0; i<posts.length; i++) { %>
     <h1> <%= posts[i].title %> </h1>
     <p>
-      <%= posts[i].place%>
+  <h3>Place: <%= posts[i].place%><h3
     </p>
-    <h3><%= posts[i].photo%></h3>
-   <h3>Description<%= posts[i].description%></h3>
+   
+   <h3><img id="img" src="<%= posts[i].photo%>" ></h3>
+   <h3>Description: <%= posts[i].description%></h3>
   <div class="signup">
 		<button onclick="deletepost('<%= posts[i]._id %>')" style="width:auto;">Delete</button> 
 
@@ -82,7 +90,7 @@
      
     }).done(function(response){
       console.log(response);
-     
+       window.location.reload(); 
     }).fail(function(response){
                    console.log(response); 
         $("#error").text("Something went wrong! Try again.");
@@ -90,6 +98,20 @@
                 
            
   }
+  $("#signout").click(function(){
+                $.ajax({
+                    method: "GET",
+                    url: "/auth/signout",
+                    
+                }).done(function(response){
+                    console.log(response);
+                     window.location.replace("/"); 
+                }).fail(function(response){
+                   console.log(response); 
+        $("#error").text("Something went wrong! Try again.");
+                });
+                
+            });
   </script>
 
 

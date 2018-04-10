@@ -84,7 +84,9 @@ exports.delete = function(req, res) {
 			res.json(post);
 		}
 	});
-};module.exports.update = function(req, res) {
+};
+
+module.exports.update = function(req, res) {
   var post = req.post;
 
   	post = _.extend(post, req.body);
