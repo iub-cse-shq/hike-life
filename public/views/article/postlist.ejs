@@ -75,7 +75,9 @@
    <h3><img id="img" src="<%= posts[i].photo%>" ></h3>
    <h3>Description: <%= posts[i].description%></h3>
   <div class="signup">
-		<button onclick="deletepost('<%= posts[i]._id %>')" style="width:auto;">Delete</button> 
+		<button onclick="deletepost('<%= posts[i]._id %>')" style="width:auto;">Delete</button>  
+		<a href="/posts/edit/<%= posts[i]._id %>">Edit</a>
+
 
     <% } %>
     </div>

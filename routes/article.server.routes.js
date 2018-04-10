@@ -11,12 +11,12 @@ module.exports = function(app){
 	.get(articles.read)
   .delete(users.requiresLogin, articles.delete);
 
-	app.route('/api/articles/edit/:articleId')
-	.get(articles.read)
-	.put(users.requiresLogin, articles.update);
-	
+ 
 app.route('/hikingtools')
 	.get(articles.viewHikingtools);
+	
+// app.route('/edit/:articleId')
+// 	.get(articles.viewEdit);
 
  app.route('/hikingguieds')
 	.get(articles.viewHikingguieds);

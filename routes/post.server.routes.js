@@ -15,6 +15,11 @@ module.exports = function(app){
 	app.route('/api/posts/edit/:postId')
 	.get(posts.read)
 	.put(users.requiresLogin, posts.update);
+	
+
+// 	app.route('/posts/edit/:postId')
+// 	.get(posts.read)
+// 	.put(users.requiresLogin, posts.viewEdit);
 
 //Routes to render views
   app.route('/posts/new').get(posts.new);

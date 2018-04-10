@@ -23,8 +23,15 @@ module.exports.list = function(req, res) {
 	});
 };
 
+module.exports.viewEdit = function(req, res){
+  res.render('./../public/views/article/edit.ejs', {
+          user: req.user || null,
+          request: req
+        });
+}
+
 exports.edit = function(req, res) {
-	res.render('./../public/views/post/edit.ejs', {
+	res.render('./../public/views/article/edit.ejs', {
 		user: req.user || null,
 		request: req
 	});
