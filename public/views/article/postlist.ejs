@@ -44,6 +44,13 @@
   #img{
     width:500px;
   } 
+.signup{
+    margin-bottom:100px;
+}
+#delete{
+        margin-top:20px;
+       margin-right:20px;
+}
   </style>
      <body>
 <nav class="navbar navbar-inverse">
@@ -73,12 +80,10 @@
     </p>
    
    <h3><img id="img" src="<%= posts[i].photo%>" ></h3>
-   <h3>Description: <%= posts[i].description%></h3>
+   <h3><%= posts[i].description%></h3>
   <div class="signup">
-		<button onclick="deletepost('<%= posts[i]._id %>')" style="width:auto;">Delete</button>  
-		<a href="/posts/edit/<%= posts[i]._id %>">Edit</a>
-
-
+		<button id="delete" onclick="deletepost('<%= posts[i]._id %>')" style="width:auto;">Delete</button>  
+		<a href="/posts/edit/<%= posts[i]._id %>"><button>Edit</button></a>
     <% } %>
     </div>
   </body>

@@ -14,6 +14,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/animate.css"> 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
   </head>
   <style>
@@ -38,9 +40,9 @@
       }
  .col-md-8{
       float:left;
-  	font-size: 30px;
+  	font-size: 40px;
        color:purple;
-    
+      left padding:100px;     
  }
 .form-{
       height: 40px;
@@ -58,9 +60,30 @@
 }
 .img{
     width:300px;
+   padding-left:1px;
+    padding-right:1px;
+      
 }
 .holder{
-    margin-left:40px;
+ 
+  margin-bottom:0px;
+ color: purple;
+    margin-left:100px;
+}
+#place{
+    border:solid #389DE5;
+}
+#photo{
+    border:solid #389DE5;
+}
+#description{
+    border:solid #389DE5;
+}
+
+
+#submit{
+      margin-top:1px;
+       margin-left:100px;
 }
   </style>
    
@@ -85,7 +108,7 @@
             <div class="container">
                 <div class="row">
        <div class="col-md-8">
-        <%= request.profile.firstName %>
+   <i> <strong><bold> <%= request.profile.firstName %></i></strong></bold>
            </div>
              <div class="col-md-4">      
  <img class="img" src=<%=request.profile.photo%>>
@@ -94,14 +117,14 @@
  </div>
  
   
-    <div class="form">
+    <div class="form">  
       <form>
       <div class="holder">
-         <h3> Place Name :</h3>
+   <i>      <h3> Place Name :</h3></i>
         <input id="place" type="text" placeholder="place"><br>
-        <h3>Image :</h3>
+  <i>      <h3>Image :</h3><i></i>
         <input id="photo" type="text" placeholder="image url* "><br>
-       <h3>Description :</h3>
+  <i>     <h3>Description :</h3></i>
         <input id="description" type="text" placeholder="description"><br><br>
         <br>
   </div>
